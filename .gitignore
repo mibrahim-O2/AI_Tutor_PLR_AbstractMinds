@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+models/
+.streamlit/
+.DS_Store
+Thumbs.db
+test_rules.py
+test_model.py
+utils/__pycache__/

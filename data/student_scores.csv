@@ -1,0 +1,201 @@
+student_id,topic,score_pct,response_time,confidence,prev_score,recommendation
+1,Algorithms,40.6,62.7,High,43.8,Review Basics
+2,Variables,18.6,94.2,Low,20.2,Review Basics
+3,File Handling,99.3,42.6,High,100.0,Next Topic
+4,Loops,63.1,50.5,Medium,55.7,Practice More
+5,File Handling,98.4,38.6,High,97.4,Next Topic
+6,Data Structures,95.1,15.9,High,92.2,Next Topic
+7,Arrays,84.2,30.0,High,72.6,Next Topic
+8,Databases,54.4,45.7,Low,56.4,Practice More
+9,Data Structures,42.5,80.1,Medium,45.7,Practice More
+10,Algorithms,96.3,30.8,High,100.0,Next Topic
+11,OOP,31.7,71.3,Low,33.0,Review Basics
+12,Loops,45.2,51.4,High,37.2,Practice More
+13,Algorithms,74.3,33.1,Medium,71.2,Next Topic
+14,Algorithms,14.1,127.9,Low,2.9,Review Basics
+15,Recursion,58.3,66.6,Low,57.5,Practice More
+16,Databases,78.2,92.4,High,69.0,Next Topic
+17,Arrays,24.2,94.9,Low,33.8,Review Basics
+18,Data Structures,28.7,113.5,Medium,23.5,Review Basics
+19,Arrays,20.3,113.4,Low,23.6,Review Basics
+20,File Handling,56.2,53.3,Medium,52.9,Practice More
+21,Recursion,86.8,33.3,High,84.5,Next Topic
+22,Algorithms,30.6,79.4,Medium,25.5,Review Basics
+23,OOP,39.5,80.2,Low,22.8,Practice More
+24,OOP,30.3,88.7,Medium,33.7,Review Basics
+25,Data Structures,69.7,12.8,Medium,84.5,Next Topic
+26,Arrays,77.4,54.5,High,68.3,Next Topic
+27,Variables,42.9,84.8,High,48.3,Practice More
+28,Loops,86.5,17.0,Medium,79.7,Next Topic
+29,Algorithms,14.1,103.7,Low,20.3,Review Basics
+30,Databases,37.4,77.2,Low,43.0,Practice More
+31,Data Structures,54.1,66.8,Low,59.1,Practice More
+32,Algorithms,38.2,89.6,Low,41.2,Practice More
+33,File Handling,85.8,47.0,High,100.0,Next Topic
+34,File Handling,5.5,117.1,Low,0.0,Review Basics
+35,Algorithms,6.7,93.3,Low,6.4,Review Basics
+36,Data Structures,67.5,39.5,Medium,69.0,Practice More
+37,Functions,61.0,58.8,Low,65.1,Practice More
+38,Loops,66.3,66.5,Medium,70.2,Practice More
+39,File Handling,78.0,15.3,Medium,75.6,Next Topic
+40,Arrays,36.4,115.4,Low,51.9,Review Basics
+41,File Handling,41.6,71.7,High,50.2,Practice More
+42,Databases,85.2,44.3,High,74.4,Next Topic
+43,Databases,75.4,60.8,High,85.9,Next Topic
+44,OOP,82.0,45.7,Medium,100.0,Next Topic
+45,Variables,42.7,78.3,Medium,38.6,Practice More
+46,Variables,19.7,94.1,Medium,25.7,Review Basics
+47,Data Structures,36.0,75.9,Low,43.8,Review Basics
+48,Arrays,9.9,145.9,Low,28.3,Review Basics
+49,Databases,97.1,10.0,Medium,77.2,Next Topic
+50,Databases,96.5,31.1,High,100.0,Next Topic
+51,Recursion,47.0,68.2,High,45.0,Practice More
+52,Loops,54.1,54.1,Medium,73.3,Practice More
+53,Recursion,38.8,77.6,Medium,57.5,Review Basics
+54,Recursion,21.5,68.6,Low,8.5,Review Basics
+55,Algorithms,29.8,138.0,Low,30.6,Review Basics
+56,Functions,94.7,30.5,Medium,100.0,Next Topic
+57,OOP,17.2,110.0,Low,21.9,Review Basics
+58,Algorithms,91.0,33.2,High,84.8,Next Topic
+59,Databases,69.8,31.6,Medium,61.6,Next Topic
+60,File Handling,64.7,60.7,Low,70.5,Practice More
+61,Arrays,45.2,102.9,Medium,62.1,Practice More
+62,OOP,78.8,49.4,Medium,76.8,Next Topic
+63,Arrays,75.3,35.3,High,61.9,Next Topic
+64,File Handling,35.4,81.0,Medium,43.9,Review Basics
+65,Databases,38.7,82.9,Low,41.4,Practice More
+66,Arrays,47.6,57.3,Medium,35.5,Practice More
+67,File Handling,79.2,68.0,Medium,83.2,Next Topic
+68,Databases,63.7,49.8,Low,65.7,Practice More
+69,Variables,53.8,72.9,Low,39.2,Practice More
+70,Variables,95.0,14.2,Medium,92.9,Next Topic
+71,Functions,28.6,80.5,Medium,9.8,Review Basics
+72,File Handling,10.3,128.8,Low,18.0,Review Basics
+73,Recursion,32.1,82.8,Low,36.7,Review Basics
+74,File Handling,92.8,24.7,High,95.7,Next Topic
+75,Variables,64.8,48.7,Medium,83.4,Practice More
+76,Recursion,75.0,42.9,High,69.0,Next Topic
+77,Recursion,22.9,65.2,Low,17.6,Review Basics
+78,Arrays,98.7,26.4,High,100.0,Next Topic
+79,File Handling,30.7,87.5,Low,37.2,Review Basics
+80,OOP,93.6,25.3,Medium,90.8,Next Topic
+81,OOP,76.2,61.1,High,72.4,Next Topic
+82,OOP,44.4,74.0,Low,43.8,Practice More
+83,Databases,76.2,46.3,Medium,84.3,Next Topic
+84,Arrays,28.5,75.5,Low,27.1,Review Basics
+85,Databases,68.8,28.2,High,81.6,Practice More
+86,Recursion,50.2,62.0,Low,59.1,Practice More
+87,Recursion,80.2,31.4,High,100.0,Next Topic
+88,Variables,71.9,41.6,High,68.5,Next Topic
+89,File Handling,65.5,41.5,Medium,66.7,Practice More
+90,Recursion,79.4,65.0,Medium,65.6,Next Topic
+91,Recursion,48.6,78.3,High,54.5,Practice More
+92,Loops,51.8,85.0,Medium,37.4,Practice More
+93,Arrays,48.7,44.8,Medium,63.7,Practice More
+94,Functions,37.8,81.3,Low,47.4,Review Basics
+95,Variables,26.3,86.2,Low,36.8,Review Basics
+96,Databases,16.5,82.0,Low,14.6,Review Basics
+97,OOP,8.7,119.0,Medium,20.7,Review Basics
+98,Algorithms,81.6,27.4,High,87.4,Next Topic
+99,Algorithms,63.7,46.9,Medium,41.8,Practice More
+100,Functions,70.3,56.8,High,76.8,Practice More
+101,Databases,55.6,52.2,Medium,46.6,Practice More
+102,Arrays,84.9,36.2,High,76.1,Next Topic
+103,Variables,38.7,76.8,Low,60.4,Review Basics
+104,Variables,75.8,28.6,High,73.9,Next Topic
+105,File Handling,62.7,57.1,Medium,46.3,Practice More
+106,Algorithms,14.7,98.4,Medium,8.4,Review Basics
+107,Variables,12.6,69.9,Low,19.4,Review Basics
+108,Algorithms,97.1,26.5,High,99.8,Next Topic
+109,Recursion,83.0,41.3,High,100.0,Next Topic
+110,OOP,35.7,88.5,Medium,8.3,Review Basics
+111,Loops,32.4,70.5,Low,35.1,Review Basics
+112,OOP,37.0,74.0,Low,44.6,Review Basics
+113,Recursion,50.0,89.3,High,54.6,Practice More
+114,Loops,96.7,28.9,Medium,90.7,Next Topic
+115,File Handling,75.4,62.1,High,77.9,Next Topic
+116,Databases,81.0,32.4,High,85.6,Next Topic
+117,Algorithms,35.0,110.6,Low,43.2,Review Basics
+118,File Handling,49.0,86.8,Medium,40.6,Practice More
+119,Data Structures,42.2,66.6,Medium,42.7,Review Basics
+120,OOP,94.3,10.0,High,100.0,Next Topic
+121,Recursion,89.9,22.8,High,93.9,Next Topic
+122,Databases,18.6,111.3,Low,9.5,Review Basics
+123,Recursion,83.0,33.0,Medium,73.2,Next Topic
+124,Recursion,43.9,96.1,Medium,63.9,Practice More
+125,Databases,96.1,10.0,High,89.3,Next Topic
+126,Algorithms,19.6,103.1,Low,46.0,Review Basics
+127,Algorithms,93.6,53.1,Medium,99.5,Next Topic
+128,Algorithms,78.3,32.3,High,76.5,Next Topic
+129,Arrays,91.5,23.6,High,86.8,Next Topic
+130,Recursion,92.5,28.3,High,100.0,Next Topic
+131,Loops,75.7,53.5,High,69.4,Next Topic
+132,Functions,56.1,60.5,Medium,62.4,Practice More
+133,Recursion,60.8,66.3,High,45.5,Practice More
+134,Recursion,39.4,108.3,Medium,50.7,Review Basics
+135,Algorithms,97.7,56.4,Medium,81.4,Next Topic
+136,Loops,61.6,58.6,Medium,61.4,Practice More
+137,Loops,49.5,49.0,Low,64.2,Practice More
+138,Functions,78.7,62.1,High,52.1,Next Topic
+139,Loops,77.7,37.8,High,70.5,Next Topic
+140,Functions,30.7,72.6,Medium,48.2,Review Basics
+141,Algorithms,43.8,51.9,High,47.2,Review Basics
+142,Functions,81.0,46.5,High,70.5,Next Topic
+143,Arrays,98.9,39.8,Medium,100.0,Next Topic
+144,Data Structures,24.5,104.4,Medium,21.4,Review Basics
+145,Recursion,85.6,54.9,Medium,95.2,Next Topic
+146,Recursion,29.6,110.1,Medium,12.1,Review Basics
+147,Databases,78.5,55.7,High,74.9,Next Topic
+148,OOP,18.3,101.1,Low,29.3,Review Basics
+149,File Handling,53.7,79.3,Medium,64.3,Practice More
+150,Data Structures,84.3,36.0,High,87.8,Next Topic
+151,Functions,83.1,57.1,High,84.4,Next Topic
+152,Recursion,66.9,46.1,High,72.2,Practice More
+153,Recursion,30.3,76.1,Low,38.7,Review Basics
+154,Functions,91.9,10.0,High,79.1,Next Topic
+155,Recursion,75.1,47.7,High,67.5,Next Topic
+156,Variables,46.5,77.0,Medium,50.8,Practice More
+157,Arrays,68.0,53.4,Medium,69.8,Practice More
+158,Functions,20.4,103.1,Low,22.7,Review Basics
+159,Algorithms,50.1,50.9,Medium,36.8,Practice More
+160,Variables,28.4,99.1,Low,33.7,Review Basics
+161,Algorithms,39.3,60.9,Low,37.0,Practice More
+162,Algorithms,65.7,66.4,Medium,75.0,Practice More
+163,Recursion,51.5,74.9,High,53.6,Practice More
+164,Algorithms,34.7,90.7,Medium,28.8,Review Basics
+165,Functions,94.7,42.2,Medium,93.9,Next Topic
+166,Functions,66.2,34.7,Medium,80.3,Next Topic
+167,Algorithms,55.4,33.4,Medium,42.6,Practice More
+168,Databases,80.1,55.4,Medium,65.2,Next Topic
+169,Functions,44.7,79.1,High,44.5,Practice More
+170,File Handling,80.9,31.3,High,95.0,Next Topic
+171,Arrays,30.8,77.1,Low,28.8,Review Basics
+172,Arrays,27.7,87.8,Medium,19.7,Review Basics
+173,OOP,61.0,65.9,High,58.5,Practice More
+174,Algorithms,16.8,111.6,Low,1.5,Review Basics
+175,Databases,63.3,74.2,Medium,79.5,Practice More
+176,Data Structures,41.5,85.5,Medium,46.6,Practice More
+177,Algorithms,93.1,48.2,High,87.4,Next Topic
+178,Arrays,49.0,91.7,High,55.8,Practice More
+179,File Handling,13.7,100.9,Medium,19.5,Review Basics
+180,Functions,86.0,33.0,Medium,84.1,Next Topic
+181,Variables,40.4,92.9,Medium,30.9,Practice More
+182,Algorithms,15.4,118.2,Low,15.8,Review Basics
+183,Algorithms,58.7,70.1,Medium,55.1,Practice More
+184,Recursion,19.9,93.1,Medium,10.4,Review Basics
+185,Databases,63.8,46.5,Low,68.6,Practice More
+186,Functions,88.5,34.9,High,87.0,Next Topic
+187,Functions,53.2,69.7,Medium,53.7,Practice More
+188,Databases,56.3,59.1,Medium,58.5,Practice More
+189,Variables,84.8,17.4,Medium,80.8,Next Topic
+190,Variables,70.3,46.9,Medium,66.3,Next Topic
+191,Arrays,50.0,61.2,Medium,69.1,Practice More
+192,Databases,7.3,136.2,Low,6.6,Review Basics
+193,Arrays,49.5,71.8,Low,61.2,Practice More
+194,Algorithms,78.4,34.3,Medium,74.9,Next Topic
+195,File Handling,94.6,53.1,High,83.9,Next Topic
+196,Loops,34.6,102.9,Low,25.3,Review Basics
+197,Algorithms,66.9,67.4,Medium,63.5,Practice More
+198,Recursion,24.4,120.0,Medium,0.0,Review Basics
+199,Data Structures,96.9,20.7,High,83.5,Next Topic
+200,Variables,70.1,29.5,High,66.9,Next Topic

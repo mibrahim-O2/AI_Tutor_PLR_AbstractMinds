@@ -345,3 +345,117 @@ with tab1:
             if not is_valid:
                 st.error(f"{error_msg}")
                 st.stop()
+# Mode selected in the sidebar decides which engine runs below.
+            with st.spinner("Generating recommendation..."):
+
+                # Same input dictionary feeds both engines
+                input_data = {
+                    "score_pct":           score,
+                    "response_time":       response_time,
+                    "confidence":          confidence,
+                    "prev_score":          prev_score,
+                    "topic":               topic,
+                    # Extra keys used by radar chart in Tab 2
+                    "score_pct_input":     score,
+                    "response_time_input": response_time,
+                    "prev_score_input":    prev_score
+                }
+
+                if mode == "Rule-Based Engine":
+                    # Handcrafted IF-THEN logic transparent by design
+                    result = run_rules(
+                        score         = score,
+                        confidence    = confidence,
+                        response_time = response_time,
+                        topic         = topic,
+                        prev_score    = prev_score
+                    )
+                else:
+                    # Trained model Tab 3 reconstructs its reasoning
+                    # afterwards instead of just printing a fixed rule
+                    result = run_model(input_data)
+
+            # Cached so switching tabs doesn't lose the result or
+            # rerun the engine on every Streamlit rerun.
+            st.session_state["last_result"]  = result
+            st.session_state["last_context"] = input_data
+            st.session_state["last_mode"]    = mode
+
+            # Color-coded banner: red = review basics,
+            # orange = practice more, green = next topic.
+            st.divider()
+            rec   = result.get("recommendation", "Practice More")
+            color = get_recommendation_color(rec)
+            disp  = decode_recommendation(rec)
+
+            st.markdown(
+                f"""
+                <div style="
+                    background  : linear-gradient(135deg, {color}22, {color}08);
+                    border-left : 6px solid {color};
+                    padding     : 24px 28px;
+                    border-radius: 10px;
+                    margin-bottom: 16px;
+                ">
+                    <h2 style="color:{color}; margin:0 0 8px 0;">
+                        Final Recommendation: {disp}
+                    </h2>
+                    <p style="margin:0; color:#666; font-size:15px;">
+                        Topic: <strong>{topic}</strong>
+                        &nbsp;&middot;&nbsp;
+                        Score: <strong>{score}%</strong>
+                        &nbsp;&middot;&nbsp;
+                        Mode: <strong>{mode}</strong>
+                    </p>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            # Four quick glance cards for the key outputs
+            c1, c2, c3, c4 = st.columns(4)
+
+            with c1:
+                metric_card("Recommendation", rec, color)
+
+            with c2:
+                metric_card(
+                    "Suggested Next Topic",
+                    result.get("next_topic", topic),
+                    "#1f77b4"
+                )
+
+            with c3:
+                metric_card(
+                    "Practice Questions",
+                    str(result.get("practice_questions", 5)),
+                    "#9467bd"
+                )
+
+            with c4:
+                # Red if revision needed, green if not
+                revision_color = (
+                    "#FF4B4B" if result.get("revision_needed")
+                    else "#00C853"
+                )
+                metric_card(
+                    "Revision Needed",
+                    "Yes" if result.get("revision_needed") else " No",
+                    revision_color
+                )
+
+            # Full explanation lives in Tab 3; this is the short version
+            st.divider()
+            st.markdown("Why this recommendation?")
+            explanation = generate_explanation(result, input_data)
+            st.info(explanation)
+
+            rule_text = result.get("rule_triggered", "")
+            if rule_text:
+                st.caption(f"{rule_text}")
+
+            st.success(
+                "Result saved! Switch to Charts, "
+                " Explainability, or Evaluation tabs "
+                "for full details."
+            )

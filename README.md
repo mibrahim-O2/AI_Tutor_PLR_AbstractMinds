@@ -1,11 +1,19 @@
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![License](https://img.shields.io/badge/License-Academic-lightgrey?style=for-the-badge)
+
 # AI Tutor for Personalized Learning Recommendations
 
 **Group:** AbstractMinds &nbsp;|&nbsp;
 **Subject:** Artificial Intelligence Lab &nbsp;|&nbsp;
 **Supervisor:** Rajesh Kumar &nbsp;|&nbsp;
 **Institution:** IMCS, University of Sindh, Jamshoro
-
----
+<br/>
+</div>
 
 ## AbstractMinds
 
@@ -18,7 +26,14 @@
 ---
 
 ## Repository Naming Convention
-
+> This repository follows the naming format required by the Lab Guide:
+>
+> ```
+> ProjectAbbreviation_GroupName
+> ```
+> ```
+> AI_Tutor_PLR_AbstractMinds
+> ```
 ```
 A I _ T u t o r _ P  L  R  _ A b s t r a c t M i n d s
 │       │         │  │  │    └──────────────────────────┘
@@ -36,3 +51,4 @@ A I _ T u t o r _ P  L  R  _ A b s t r a c t M i n d s
 | `AbstractMinds` | Our Team Name | The developers behind this project |
 
 ---
+

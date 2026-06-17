@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -262,7 +261,7 @@ def render_ui():
     ])
 
     # TAB 1 -- GET RECOMMENDATION
-with tab1:
+    with tab1:
 
         st.subheader("Enter Your Quiz Details")
         st.caption(

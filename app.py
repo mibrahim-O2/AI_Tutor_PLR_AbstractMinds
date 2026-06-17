@@ -722,3 +722,161 @@ with tab1:
             use_container_width=True,
             hide_index=True
         )
+# TAB 4 -- EVALUATION
+
+    with tab4:
+
+        st.subheader("Evaluation Module")
+        st.caption(
+            "Compares Rule-Based Engine vs Decision Tree across "
+            "Accuracy, Precision, Recall, F1-Score, and Confusion Matrix."
+        )
+
+        # Guard: dataset must exist
+        if df is None:
+            st.error(" Dataset not found.")
+            st.stop()
+
+        # evaluates both approaches on the same 20% test split
+        with st.spinner(
+            "PROCESSING the evaluation on test split..."
+        ):
+            metrics = evaluate_model(df)
+
+        # guard evaluation must succeed
+        if not metrics or metrics["test_size"] == 0:
+            st.error(
+                "Evaluation failed. "
+                "Check dataset and model."
+            )
+            st.stop()
+
+        # how many records were used for training vs testing
+        st.markdown("#### Dataset Split (80% Train / 20% Test)")
+        ds1, ds2, ds3 = st.columns(3)
+        ds1.metric("Total Records", len(df))
+        ds2.metric("Training Set",  metrics["train_size"])
+        ds3.metric("Test Set",      metrics["test_size"])
+
+        st.divider()
+
+        # rule Based (orange) vs Decision Tree (blue)
+        st.markdown("#### Performance Metrics")
+
+        col_rules, col_tree = st.columns(2)
+
+        with col_rules:
+            st.markdown(
+                "<h4 style='color:#FFA500;'>"
+                "[RULES] Rule-Based Engine"
+                "</h4>",
+                unsafe_allow_html=True
+            )
+            metric_card("Accuracy",  f"{metrics['rules_accuracy']:.2%}",  "#FFA500")
+            metric_card("Precision", f"{metrics['rules_precision']:.2%}", "#FFA500")
+            metric_card("Recall",    f"{metrics['rules_recall']:.2%}",    "#FFA500")
+            metric_card("F1 Score",  f"{metrics['rules_f1']:.2%}",        "#FFA500")
+
+        with col_tree:
+            st.markdown(
+                "<h4 style='color:#1f77b4;'>"
+                "[TREE] Decision Tree"
+                "</h4>",
+                unsafe_allow_html=True
+            )
+            metric_card("Accuracy",  f"{metrics['tree_accuracy']:.2%}",  "#1f77b4")
+            metric_card("Precision", f"{metrics['tree_precision']:.2%}", "#1f77b4")
+            metric_card("Recall",    f"{metrics['tree_recall']:.2%}",    "#1f77b4")
+            metric_card("F1 Score",  f"{metrics['tree_f1']:.2%}",        "#1f77b4")
+
+        st.divider()
+
+        st.markdown("####  Side-by-Side Approach Comparison")
+        comp_fig = comparison_chart(metrics)
+        st.plotly_chart(comp_fig, use_container_width=True)
+
+        # Winner callout message
+        if metrics["tree_accuracy"] > metrics["rules_accuracy"]:
+            diff = metrics["tree_accuracy"] - metrics["rules_accuracy"]
+            st.success(
+                f" Decision Tree outperforms the Rule-Based Engine "
+                f"by {diff:.2%} in accuracy on this test set."
+            )
+        elif metrics["rules_accuracy"] > metrics["tree_accuracy"]:
+            diff = metrics["rules_accuracy"] - metrics["tree_accuracy"]
+            st.info(
+                f" Rule-Based Engine outperforms the Decision Tree "
+                f"by {diff:.2%} in accuracy on this test set."
+            )
+        else:
+            st.info(
+                "Both approaches achieved equal accuracy "
+                "on this test set."
+            )
+
+        st.divider()
+
+        # highlights where the Decision Tree gets confused between classes
+        st.markdown("#### Confusion Matrix (Decision Tree)")
+        st.caption(
+            "Rows = Actual labels. "
+            "Columns = Predicted labels. "
+            "Diagonal cells = Correct predictions."
+        )
+
+        if metrics["confusion_matrix"] is not None:
+            cm_fig = confusion_matrix_chart(
+                metrics["confusion_matrix"],
+                metrics["labels"]
+            )
+            st.plotly_chart(cm_fig, use_container_width=True)
+        else:
+            st.warning(" Confusion matrix not available.")
+
+        st.divider()
+
+        # per class breakdown, tucked into an expander to keep the page clean
+        st.markdown(
+            "#### Full Classification Report (Decision Tree)"
+        )
+        st.caption(
+            "Per-class Precision, Recall, F1-Score, and Support."
+        )
+        with st.expander("Show full report", expanded=False):
+            st.code(metrics["report"], language=None)
+
+        st.divider()
+
+        # Plain English meaning of each metric, mainly for the viva panel
+        st.markdown("#### How to Interpret These Results")
+
+        st.markdown("""
+        | Term | Meaning |
+        |---|---|
+        | **Accuracy** | Percentage of all predictions that were correct |
+        | **Precision** | Of all students predicted as class X, how many actually were X |
+        | **Recall** | Of all actual class X students, how many did the model identify |
+        | **F1 Score** | Harmonic mean of Precision and Recall -- best single metric |
+        | **Confusion Matrix** | Shows where the model confuses one class for another |
+        """)
+
+        st.markdown("""
+        **Why compare two approaches?**
+
+        The Rule-Based Engine uses hand-crafted IF-THEN logic --
+        transparent, explainable, and requires no training data.
+
+        The Decision Tree learns patterns automatically from labeled
+        data -- adaptive and data-driven.
+
+        Comparing both satisfies the Lab Guide requirement to evaluate
+        *at least two settings or approaches* in the Evaluation Module.
+        """)
+
+# Streamlit imports this file as a module, so render_ui() must run
+# at module level either way -- not only inside if __name__.
+
+if __name__ == "__main__":
+    render_ui()
+else:
+    render_ui()

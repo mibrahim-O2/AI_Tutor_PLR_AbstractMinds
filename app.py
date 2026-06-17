@@ -573,7 +573,7 @@ def render_ui():
                 border-radius : 8px;
             ">
                 <h3 style="color:{color}; margin:0;">
-                    [RESULT] {decode_recommendation(rec)}
+                    {decode_recommendation(rec)}
                 </h3>
                 <p style="margin:6px 0 0 0; color:#555;">
                     AI Mode used: <strong>{mode}</strong>

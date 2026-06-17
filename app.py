@@ -111,7 +111,7 @@ def comparison_chart(metrics):
     ))
 
     fig.update_layout(
-        title            = "Rule-Based Engine vs Decision Tree -- Metric Comparison",
+        title            = "Rule Based Engine vs Decision Tree Metric Comparison",
         barmode          = "group",
         yaxis_range      = [0, 1.15],
         yaxis_tickformat = ".0%",
@@ -608,14 +608,14 @@ def render_ui():
 
         # Response time signa above 80s is slow
         time_signal = (
-            "SLOW" if response_time > 80 else "[FAST]"
+            "SLOW" if response_time > 80 else "FAST"
         )
         kf2.metric("Response Time", f"{response_time}s", time_signal)
 
         conf_signal = (
-            "[LOW CONFIDENCE]"    if confidence == "Low"    else
-            "[MID CONFIDENCE]"    if confidence == "Medium" else
-            "[HIGH CONFIDENCE]"
+            "LOW CONFIDENCE"    if confidence == "Low"    else
+            "MID CONFIDENCE"    if confidence == "Medium" else
+            "HIGH CONFIDENCE"
         )
         kf3.metric("Confidence", confidence, conf_signal)
 
@@ -623,7 +623,7 @@ def render_ui():
         if prev_score is not None:
             change       = score - prev_score
             trend_label  = f"{'(+)' if change >= 0 else '(-)'} {abs(change):.1f}%"
-            trend_signal = "IMPROVING" if change >= 0 else "[DECLINING]"
+            trend_signal = "IMPROVING" if change >= 0 else "DECLINING"
             kf4.metric("Score Trend", trend_label, trend_signal)
         else:
             trend_signal = "N/A"
@@ -767,7 +767,7 @@ def render_ui():
         with col_rules:
             st.markdown(
                 "<h4 style='color:#FFA500;'>"
-                "[RULES] Rule-Based Engine"
+                "Rule Based Engine"
                 "</h4>",
                 unsafe_allow_html=True
             )
@@ -779,7 +779,7 @@ def render_ui():
         with col_tree:
             st.markdown(
                 "<h4 style='color:#1f77b4;'>"
-                "[TREE] Decision Tree"
+                "Decision Tree"
                 "</h4>",
                 unsafe_allow_html=True
             )

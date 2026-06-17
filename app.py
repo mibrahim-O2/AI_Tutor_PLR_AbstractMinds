@@ -163,3 +163,102 @@ def confusion_matrix_chart(cm, labels):
         paper_bgcolor = "rgba(0,0,0,0)"
     )
     return fig
+# Renders the whole app: header, sidebar, and four tabs
+# get Recommendation, cCharts, Explainability and Evaluation.
+def render_ui():
+    """
+    Main UI render function.
+    Called at module level so Streamlit can execute it on every rerun.
+    """
+
+    # Project title and team info shown at the top of every page.
+    st.markdown(
+        """
+        <div style="padding: 20px 0 10px 0;">
+            <h1 style="margin:0;">
+                Personalized Learning Recommendations
+            </h1>
+            <p style="color:#888; margin:6px 0 0 0; font-size:16px;">
+                Group:Abstract Minds &nbsp;|&nbsp;
+                Rule-Based Engine & Decision Tree Classifier
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    st.divider()
+
+    # Sidebar::  mode selector and retrain button and project info
+    with st.sidebar:
+        st.markdown("Settings & Controls")
+
+        # Switches between the Rule-Based Engine and Decision Tree.
+        mode = st.radio(
+            label   = "Select AI Mode",
+            options = ["Rule-Based Engine", "Decision Tree"],
+            index   = 0,
+            help    = (
+                "Rule-Based: uses IF-THEN logic rules.\n"
+                "Decision Tree: uses a trained ML model."
+            )
+        )
+
+        st.divider()
+        st.markdown("Model Controls")
+
+        # Retrains the Decision Tree on demand and saves it to
+        # models or decision_tree.pkl
+        retrain_btn = st.button(
+            label               = "Retrain Decision Tree Model",
+            use_container_width = True,
+            help                = "Retrains the model on the dataset and saves it."
+        )
+
+        if retrain_btn:
+            with st.spinner("Training Decision Tree... please wait."):
+                df_train = load_data()
+                if df_train is not None:
+                    train_result = train_model(df_train)
+                    if train_result["status"] == "success":
+                        st.success(
+                            f"Model retrained successfully.\n"
+                            f"Accuracy: {train_result['accuracy']:.2%}"
+                        )
+                    else:
+                        st.error(f" {train_result['message']}")
+                else:
+                    st.error(
+                        "Dataset not found. "
+                        "Run: python data/generate_dataset.py"
+                    )
+
+        st.divider()
+        st.markdown("### About This Project")
+        st.markdown(
+            "**Title:** AI Tutor for Personalized Learning Recommendations\n\n"
+            "**Subject:** Artificial Intelligence Lab(CSC631)\n\n"
+            "**Instructor:** Rajesh Kumar\n\n"
+            "**Institution:** IMCS, University of Sindh, Jamshoro\n\n"
+            "**Team — AbstractMinds**\n\n"
+            "- **Muhammad Ibrahim** `2k23/CSE/94` · Project Lead\n"
+            "  - Recommendation Engine · Decision Tree · Evaluation · Documentation . Dataset Generation\n\n"
+            "- **Arsal Jan** `2k23/CSE/34` · UI Developer\n"
+            "  - Streamlit UI · Tab Layout · Charts Integration · Testing\n\n"
+            "- **Ali** `2k23/CSE/27` · Utilities & Docs\n"
+            "  - Helper Utilities · Screenshots \n\n"
+            "---\n\n"
+            "**Stack:** Python · Streamlit · scikit-learn · Plotly · Pandas\n\n"
+            "**AI Methods:** Rule-Based Engine + Decision Tree Classifier"
+        )
+
+    # Loaded once and shared across all tabs.
+    df = load_data()
+
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "Get Recommendation",
+        "Charts",
+        "Explainability",
+        "Evaluation"
+    ])
+
+    # TAB 1 -- GET RECOMMENDATION

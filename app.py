@@ -262,3 +262,86 @@ def render_ui():
     ])
 
     # TAB 1 -- GET RECOMMENDATION
+with tab1:
+
+        st.subheader("Enter Your Quiz Details")
+        st.caption(
+            "Fill in your quiz details below and click "
+            "**Get My Recommendation** to receive a personalized study plan."
+        )
+
+        # Three columns keep the form compact
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            topic = st.selectbox(
+                label   = "Quiz Topic",
+                options = get_topic_list(),
+                index   = 0,
+                help    = "Select the topic you were just tested on."
+            )
+
+        with col2:
+            score = st.slider(
+                label     = "Quiz Score (%)",
+                min_value = 0,
+                max_value = 100,
+                value     = 60,
+                step      = 1,
+                help      = "Your score on the quiz (0 to 100)."
+            )
+
+        with col3:
+            confidence = st.radio(
+                label   = "Confidence Level",
+                options = ["High", "Medium", "Low"],
+                index   = 1,
+                help    = "How confident did you feel during the quiz?"
+            )
+
+        col4, col5 = st.columns(2)
+
+        with col4:
+            response_time = st.slider(
+                label     = "Response Time (seconds)",
+                min_value = 5,
+                max_value = 180,
+                value     = 60,
+                step      = 5,
+                help      = "Total time spent answering the quiz."
+            )
+
+        with col5:
+            prev_score = st.number_input(
+                label     = "Previous Score on this Topic (%)",
+                min_value = 0.0,
+                max_value = 100.0,
+                value     = 50.0,
+                step      = 0.5,
+                help      = "Your score last time you took a quiz on this topic."
+            )
+
+        st.divider()
+
+        # Quick summary of the current inputs before submitting
+        col_p1, col_p2, col_p3, col_p4 = st.columns(4)
+        col_p1.metric("Topic",         topic)
+        col_p2.metric("Your Score",    f"{score}%")
+        col_p3.metric("Confidence",    confidence)
+        col_p4.metric("Response Time", f"{response_time}s")
+
+        st.divider()
+
+        run_btn = st.button(
+            label               = "Get My Recommendation",
+            type                = "primary",
+            use_container_width = True
+        )
+
+        if run_btn:
+
+            # Validate before running either engine
+            is_valid, error_msg = validate_inputs(score, response_time, topic)
+            if not is_valid:
+                st.error(f"{error_msg}")
+                st.stop()

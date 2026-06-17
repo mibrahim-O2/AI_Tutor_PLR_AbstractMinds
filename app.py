@@ -459,3 +459,82 @@ with tab1:
                 " Explainability, or Evaluation tabs "
                 "for full details."
             )
+# TAB 2 -- CHARTS
+
+    with tab2:
+
+        st.subheader("Performance Visualizations")
+
+        if df is None:
+            st.error(
+                "Dataset not found. "
+                "Run: python data/generate_dataset.py"
+            )
+            st.stop()
+
+        # Summary numbers shown above the charts as context
+        st.markdown("#### Dataset Overview")
+        ov1, ov2, ov3, ov4 = st.columns(4)
+        ov1.metric("Total Records",     len(df))
+        ov2.metric("Topics Covered",    df["topic"].nunique())
+        ov3.metric("Avg Score",         f"{df['score_pct'].mean():.1f}%")
+        ov4.metric("Avg Response Time", f"{df['response_time'].mean():.0f}s")
+
+        st.divider()
+
+        # Builds bar/pie/line/radar figures from the dataset and the
+        # last submitted inputs
+        result_for_charts = st.session_state.get("last_context", {})
+        charts = create_visuals(df, result_for_charts)
+
+        if not charts:
+            st.warning(" Charts could not be generated.")
+            st.stop()
+
+        # Bar = avg score per topic, Pie = recommendation distribution.
+        col_l, col_r = st.columns(2)
+
+        with col_l:
+            st.plotly_chart(
+                charts["bar_chart"],
+                use_container_width=True
+            )
+
+        with col_r:
+            st.plotly_chart(
+                charts["pie_chart"],
+                use_container_width=True
+            )
+
+        st.divider()
+
+        # Score trend across the first 40 records.
+        st.plotly_chart(
+            charts["line_chart"],
+            use_container_width=True
+        )
+
+        st.divider()
+
+        # Compares this students inputs against the dataset averages
+        if "last_context" in st.session_state:
+            st.plotly_chart(
+                charts["radar_chart"],
+                use_container_width=True
+            )
+        else:
+            st.info(
+                "Run a recommendation in the "
+                "Get Recommendation tab to see "
+                "your personal radar chart."
+            )
+
+        st.divider()
+
+        st.markdown("#### Dataset Sample")
+        st.caption("Showing first 20 rows of student_scores.csv")
+        st.dataframe(
+            df.head(20).copy(),
+            use_container_width=True,
+            hide_index=True
+        )

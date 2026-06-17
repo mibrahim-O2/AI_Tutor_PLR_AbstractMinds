@@ -51,4 +51,126 @@ A I _ T u t o r _ P  L  R  _ A b s t r a c t M i n d s
 | `AbstractMinds` | Our Team Name | The developers behind this project |
 
 ---
+## 1. Project Overview
 
+This project presents an AI Tutor for Personalized Learning
+Recommendations, implemented as a Streamlit based web application.
+The system evaluates a student's quiz performance score, response
+time, self reported confidence, and prior result and produces a
+single, actionable recommendation: review foundational material,
+continue practicing, or proceed to the next topic.
+
+Two distinct artificial intelligence methodologies are implemented
+and evaluated in parallel:
+
+- **Rule Based Engine** : A Symbolic AI approach using explicit
+  IF-THEN inference
+- **Decision Tree Classifier** : A supervised Machine Learning
+  model implemented using scikit learn
+
+Both methodologies are assessed using standard classification
+metrics Accuracy, Precision, Recall, and F1-Score alongside a
+Confusion Matrix, with results presented comparatively in the
+Evaluation module of the application.
+
+---
+
+## 2. Problem Statement
+
+A numerical quiz score, in isolation, provides limited insight into
+a student's true level of understanding. Two students achieving
+identical scores may require entirely different interventions, yet
+conventional fixed curricula make no such distinction. This project
+addresses that limitation by incorporating additional behavioral
+indicators response time, self reported confidence, and historical
+performance to generate a more accurate, individualized
+recommendation.
+
+**System Inputs:**
+- Quiz Score (%)
+- Response Time (seconds)
+- Confidence Level (High / Medium / Low)
+- Topic
+- Previous Score (%)
+
+**System Outputs:**
+- Recommendation (Review Basics / Practice More / Next Topic)
+- Next Topic Suggestion
+- Practice Question Count
+- Revision Flag
+
+---
+
+## 3. AI Methods Used
+
+### Option 1 Rule-Based Engine
+
+A forward chaining inference system implementing the following
+decision logic:
+```prolog
+R1: IF score < 40
+    THEN Review Basics
+
+R2: IF 40 <= score < 70
+    THEN Practice More
+
+R3: IF score >= 70
+    THEN Next Topic
+```
+### Performance Modifiers
+
+**M1 Slow Response**
+
+```prolog
+IF response_time > 80s
+THEN add 3 extra practice questions
+```
+
+**M2 Low Confidence**
+
+```prolog
+IF confidence == "Low"
+THEN add 2 extra questions
+AND flag for revision
+```
+
+**M3 Performance Decline**
+
+```prolog
+IF score drop > 10%
+THEN flag for revision
+```
+---
+### Option 2 Decision Tree Classifier
+
+A supervised classification model trained on the synthetic student
+dataset, with hyperparameters selected to mitigate overfitting on a
+relatively small sample size.
+
+- Algorithm: `DecisionTreeClassifier` (scikit learn)
+- `max_depth = 4` — constrains model complexity
+- `criterion = "gini"` — standard impurity measure for classification
+- `random_state = 42` — ensures reproducibility across executions
+- 80% training / 20% testing split, stratified by class label
+
+**Feature Set Used for Model Training:**
+
+| Feature | Description |
+|---|---|
+| `score_pct` | Quiz score percentage |
+| `response_time` | Time taken, measured in seconds |
+| `confidence_encoded` | High = 2, Medium = 1, Low = 0 |
+| `prev_score` | Score from the previous quiz attempt |
+
+---
+
+## 4. Features
+
+- Dynamic switching between Rule-Based and Decision Tree modes
+- Color-coded recommendation banner indicating output severity
+- Four interactive Plotly visualizations: Bar, Pie, Line, and Radar charts
+- Comprehensive explainability panel detailing step by step reasoning
+- Direct comparative evaluation of both implemented AI approaches
+- Confusion matrix heatmap for detailed performance analysis
+- Robust input validation with descriptive error messaging
+- On demand model retraining accessible via the sidebar interface

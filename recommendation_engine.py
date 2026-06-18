@@ -849,7 +849,7 @@ def create_visuals(df, result):
     if df is None or df.empty:
         return charts
 
-    # CHART 1: BAR CHART -- Average Score per Topic
+    # CHART 1: BAR CHART 
     # Shows which topics students perform best and worst on.
     # Charts (bar).
 

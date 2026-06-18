@@ -135,8 +135,6 @@ def preprocess_data(df):
     return X, y
 
 # 3. RULE-BASED ENGINE
-# Implement main algorithm -- Option 1 (Rules).
-# Show intermediate steps (reasoning_steps).
 # Key factors and rules used in decision.
 # This function implements forward-chaining IF-THEN logic.
 # Every decision is logged in reasoning_steps for display

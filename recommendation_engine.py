@@ -1091,8 +1091,8 @@ def evaluate_model(df):
     )
 
     # RULE-BASED ENGINE EVALUATION
-    # Re-attach original CSV columns to X_test rows so we can
-    # pass topic and confidence strings to run_rules().
+    # Re-attach original columns to test set so we can pass
+    # topic, confidence and other features to run_rules() function.
 
     test_indices = X_test.index
     df_test      = df.loc[test_indices].copy()

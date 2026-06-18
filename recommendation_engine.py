@@ -37,7 +37,6 @@ from utils.helpers import (
 )
 # FILE PATHS
 # Using os.path.join avoids hardcoded paths.
-# Avoid hardcoded paths.
 
 MODEL_PATH = os.path.join("models", "decision_tree.pkl")
 DATA_PATH  = os.path.join("data",   "student_scores.csv")

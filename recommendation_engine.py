@@ -57,8 +57,7 @@ FEATURE_COLS = [
 LABEL_ORDER = ["Review Basics", "Practice More", "Next Topic"]
 
 # RULE ENGINE CONSTANTS
-# Defined here so thresholds are easy to find and change.
-# Use meaningful variable names.
+# Defined here so thresholds are easy to find and change by Using meaningful variable names.
 PRACTICE_LOW               = 10   # Base questions for Review Basics
 PRACTICE_MEDIUM            = 6    # Base questions for Practice More
 PRACTICE_HIGH              = 3    # Base questions for Next Topic

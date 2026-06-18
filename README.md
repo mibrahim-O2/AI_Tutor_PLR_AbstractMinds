@@ -7,11 +7,15 @@
 ![License](https://img.shields.io/badge/License-Academic-lightgrey?style=for-the-badge)
 
 # AI Tutor for Personalized Learning Recommendations
+<div align="center">
+</div>
 
-**Group:** AbstractMinds &nbsp;|&nbsp;
-**Subject:** Artificial Intelligence Lab &nbsp;|&nbsp;
-**Supervisor:** Rajesh Kumar &nbsp;|&nbsp;
-**Institution:** IMCS, University of Sindh, Jamshoro
+**Group:** *AbstractMinds* &nbsp;|&nbsp;
+**Subject:** *Artificial Intelligence Lab* &nbsp;|&nbsp;
+**Supervisor:** *Rajesh Kumar* &nbsp;|&nbsp;
+**Institution:** *IMCS, University of Sindh, Jamshoro*
+
+*For a quick understanding of the project including Problem Statement, PEAS Framework, Methodology, AI Implementation, Results, Limitations, and Conclusion* **[*Click here→*](report/final_report.md)**
 <br/>
 </div>
 

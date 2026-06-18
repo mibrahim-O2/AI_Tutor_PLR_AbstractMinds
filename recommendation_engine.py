@@ -1,15 +1,14 @@
-# This file contains ALL AI logic for the AI Tutor for Personalized Learning Recommendations.
-# It is completely separated from app.py (the UI).
-# Functions:
-#   1. load_data(path)                  
-#   2. preprocess_data(df)              
-#   3. run_rules(...)                   Option 1
-#   4. generate_explanation(...)        
-#   5. train_model(df)                  Option 3
-#   6. run_model(input_dict)            option 3
-#   7. get_tree_explanation(input_dict) 
-#   8. create_visuals(df, result)       
-#   9. evaluate_model(df)               
+# This file contains ALL AI logic for the project maintainability and modularity.
+# Functions Implemented:
+#   1. load_data(path)                  - Load and validate dataset
+#   2. preprocess_data(df)              - Data cleaning and encoding
+#   3. run_rules(...)                   - Rule-Based Engine (Option 1)
+#   4. generate_explanation(...)        - Natural language explanation
+#   5. train_model(df)                  - Train Decision Tree (Option 3)
+#   6. run_model(input_dict)            - Make prediction using ML model
+#   7. get_tree_explanation(input_dict) - Explain Decision Tree path
+#   8. create_visuals(df, result)       - Generate all Plotly charts
+#   9. evaluate_model(df)               - Compare both AI approaches         
 
 import os
 import pickle

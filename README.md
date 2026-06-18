@@ -174,3 +174,34 @@ relatively small sample size.
 - Confusion matrix heatmap for detailed performance analysis
 - Robust input validation with descriptive error messaging
 - On demand model retraining accessible via the sidebar interface
+---
+## 5. Project Structure
+
+```
+AI_Tutor_PLR_AbstractMinds/
+│
+├── app.py                        -- Streamlit main entry point
+├── recommendation_engine.py      -- All AI logic
+│
+├── data/
+│   ├── generate_dataset.py       -- Script to generate synthetic CSV
+│   └── student_scores.csv        -- Synthetic dataset (200 rows)
+│
+├── models/
+│   └── decision_tree.pkl         -- Saved trained model (auto-generated)
+│
+├── utils/
+│   └── helpers.py                -- Shared constants and utilities
+│
+├── report/
+│   └── final_report.md           -- Short project report
+│
+├── screenshots/
+│   ├── screenshot_input.png
+│   ├── screenshot_charts.png
+│   ├── screenshot_explainability.png
+│   └── screenshot_evaluation.png
+│
+├── requirements.txt
+└── README.md
+```

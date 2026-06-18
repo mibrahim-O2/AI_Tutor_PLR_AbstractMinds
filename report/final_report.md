@@ -1,5 +1,6 @@
-# AI Tutor for Personalized Learning Recommendations (PLR)
-## Final Report
+<h1 align="center">AI Tutor for Personalized Learning Recommendations (PLR)</h1>
+<h1 align="center">Final Report</h1>
+
 ## Repository Identity
 > This repository follows the naming format required by the Lab Guide:
 >

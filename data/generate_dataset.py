@@ -1,19 +1,9 @@
 # data/generate_dataset.py
 # Synthetic dataset generator for the AI Tutor PLR.
-#
 # Run this script ONCE before starting the app:
 #   python data/generate_dataset.py
-#
 # Output:
 #   data/student_scores.csv  (200 rows)
-#
-# Why synthetic data?
-#   - No real student data needed (no privacy concerns)
-#   - Full control over label distribution
-#   - Labels assigned by same rules as the Rule Engine
-#   - Slight noise added so Decision Tree learns soft boundaries
-#     instead of memorizing perfect thresholds
-#
 # Sample dataset used by the app.
 # Dataset used to train DecisionTreeClassifier.
 

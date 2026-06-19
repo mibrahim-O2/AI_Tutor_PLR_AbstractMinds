@@ -562,6 +562,7 @@ the entire AbstractMinds team *Muhammad Ibrahim, Arsal Jan, and
 Ali* as outlined in the Team section above. 
 
 [![LinkedIn](https://img.shields.io/badge/Muhammad%20Ibrahim-LinkedIn-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/muhammad-ibrahim-o2/?skipRedirect=true)
+[![LinkedIn](https://img.shields.io/badge/Arsal%20Jan-LinkedIn-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/arsal-chandio-b2003a347/)
 ---
   
 ## License

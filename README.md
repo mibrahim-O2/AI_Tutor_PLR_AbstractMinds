@@ -423,7 +423,22 @@ Both results are presented side by side, with supporting charts,
 in the Evaluation tab.
 
 ---
-## 11. Screenshots
+## 11. Demo Video
+
+A complete walkthrough of the AI Tutor covering the recommendation
+engine, all four dashboard tabs, and a side by side comparison of
+both AI approaches is available on YouTube.***Click the thumbnail below to watch ↓***
+
+[![Watch Demo](https://img.youtube.com/vi/mhN8FOQ0iA8/maxresdefault.jpg)](https://youtu.be/mhN8FOQ0iA8)
+
+<p align="center">
+  <a href="https://youtu.be/mhN8FOQ0iA8">
+    <img src="https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch Demo">
+  </a>
+</p>
+
+---
+## 12. Screenshots
 
 The following screenshots walk through all four tabs of the
 application, along with the sidebar controls used to switch modes,

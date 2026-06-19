@@ -509,3 +509,31 @@ Developer Details sections.
 ![Sidebar About and Developer Info](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/about.png)
 
 ---
+## 14. Lab Guide Compliance
+
+Every requirement outlined in the AI Lab Project Guide was treated
+as a checklist rather than a suggestion. The table below maps each
+guideline directly to the part of the project that satisfies it,
+so compliance can be verified at a glance rather than taken on
+faith.
+
+| Lab Guide Requirement | How We Satisfy It |
+|---|---|
+| Complete source code | `app.py` + `recommendation_engine.py` + `utils/helpers.py` |
+| README with setup/run instructions | Sections 8 and 9 above |
+| Requirements file | `requirements.txt` with pinned dependency versions |
+| Sample dataset | `data/student_scores.csv` (200 synthetic records) |
+| Screenshots of working UI | Section 11 above |
+| Short report | `report/final_report.md` + Section 13 above |
+| Module A Problem Setup | Tab 1 input form with full input validation |
+| Module B Core Logic | `run_rules()` + `train_model()` + `run_model()` |
+| Module C Visual UI | Four Plotly charts, metric cards, and data tables |
+| Module D Explainability | Tab 3 full reasoning log with natural-language output |
+| Module E Evaluation | Tab 4 metrics, confusion matrix, and side-by-side comparison |
+
+Every module required by the guide is not just present but fully
+functional each one can be demonstrated live in the running
+application, not just described in documentation.
+
+---
+

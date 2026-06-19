@@ -591,3 +591,18 @@ Ali* as outlined in the Team section above.
 [![LinkedIn](https://img.shields.io/badge/Muhammad%20Ibrahim-LinkedIn-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/muhammad-ibrahim-o2/?skipRedirect=true)
 
 ---
+## License
+
+This project is submitted for academic evaluation purposes only,
+as part of the BS Computer Science curriculum at the ***Institute of
+Mathematics and Computer Science (IMCS), University of Sindh,
+Jamshoro.***
+
+All rights reserved © 2026, Team AbstractMinds
+**(Muhammad Ibrahim, Arsal Jan, Ali)**.
+
+This repository and its contents may not be copied, redistributed,
+or reused for commercial purposes without explicit permission from
+the contributors.
+
+---

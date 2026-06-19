@@ -257,6 +257,25 @@ clear purposes:
    class distribution deliberately, keeping the dataset realistic
    and balanced rather than skewed toward whichever outcome happens
    to dominate in a typical classroom.
+---
+## 7. Tech Stack
+
+Every tool in this project was chosen for a specific reason rather
+than out of habit. *Python* keeps the entire codebase in one
+language, *Streamlit* removes the need for separate frontend work,
+and *scikit learn* provides a dependable, well documented foundation
+for the Decision Tree model. Together, this stack made it possible
+to build a fully functional, explainable AI application without
+introducing unnecessary complexity.
+
+| Tool | Version | Purpose |
+|---|---|---|
+| Python | 3.10+ | Core programming language for the entire application |
+| Streamlit | 1.35.0 | Builds the interactive web interface without separate frontend code |
+| scikit-learn | 1.5.0 | Trains and runs the Decision Tree Classifier |
+| Pandas | 2.2.2 | Loads, cleans, and preprocesses the dataset |
+| NumPy | 1.26.4 | Handles numerical operations and array computations |
+| Plotly | 5.22.0 | Renders all interactive charts in the Charts tab |
+| Matplotlib | 3.9.0 | Provides supporting static visualizations where needed |
 
 ---
-

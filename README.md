@@ -279,3 +279,56 @@ introducing unnecessary complexity.
 | Matplotlib | 3.9.0 | Provides supporting static visualizations where needed |
 
 ---
+## 8. Installation and Setup
+
+Getting the AI Tutor running locally takes only a few minutes.
+The steps below walk through cloning the repository, setting up an
+isolated Python environment, installing dependencies, generating
+the dataset, and launching the application.
+
+### Prerequisites
+
+Before starting, make sure the following are installed on your
+system:
+- Python 3.10 or higher
+- pip (comes bundled with Python)
+- Git
+
+### Setup Steps
+### Step 1 *Clone the repository*
+```bash
+git clone https://github.com/YOUR_USERNAME/AI_Tutor_PLR_AbstractMinds.git
+cd AI_Tutor_PLR_AbstractMinds
+```
+### Step 2 *Create and activate a virtual environment*
+### *Windows*
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+### *Mac/Linux*
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+### Step 3 *Install all required dependencies*
+```bash
+pip install -r requirements.txt
+```
+### Step 4 *Generate the synthetic dataset (run once only)*
+```bash
+python data/generate_dataset.py
+```
+### Step 5 *Create the models folder*
+```bash
+mkdir models
+```
+### Step 6 *Launch the application*
+```bash
+streamlit run app.py
+```
+Once the command runs, the app opens automatically in your default
+browser at `http://localhost:8501`. If it does not open on its own,
+copy that address into your browser manually.
+
+---

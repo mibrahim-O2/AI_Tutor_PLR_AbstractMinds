@@ -423,3 +423,74 @@ Both results are presented side by side, with supporting charts,
 in the Evaluation tab.
 
 ---
+## 11. Screenshots
+
+The following screenshots walk through all four tabs of the
+application, along with the sidebar controls used to switch modes,
+retrain the model, and view project and developer information.
+
+---
+
+### Tab 1 Get Recommendation
+
+Input form, AI mode selection, and the resulting recommendation
+output with metric cards and quick explanation.
+
+![Get Recommendation 1](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Getrecomendation1.png)
+![Get Recommendation 2](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Getrecomendation2.png)
+![Get Recommendation 3](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Getrecomendation3.png)
+![Get Recommendation 4](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Getrecomendation4.png)
+
+---
+
+### Tab 2 Charts Dashboard
+
+Dataset overview metrics followed by the Bar, Pie, Line, and Radar
+chart visualizations.
+
+![Charts 1](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/charts1.png)
+![Charts 2](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/charts2.png)
+![Charts 3](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/charts3.png)
+![Charts 4](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/charts4.png)
+![Charts 5](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/charts5.png)
+![Charts 6](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/charts6.png)
+
+---
+
+### Tab 3 Explainability Panel
+
+Key factors, recommendation summary, AI decision path, and the
+input-versus-threshold comparison table.
+
+![Explainability 1](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Explainability1.png)
+![Explainability 2](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Explainability2.png)
+![Explainability 3](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Explainability3.png)
+![Explainability 4](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Explainability4.png)
+![Explainability 5](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Explainability5.png)
+
+---
+
+### Tab 4 Evaluation Dashboard
+
+Side-by-side metric comparison, the comparison bar chart, confusion
+matrix heatmap, and the full classification report.
+
+![Evaluation 1](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Evaluation1.png)
+![Evaluation 2](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Evaluation2.png)
+![Evaluation 3](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Evaluation3.png)
+![Evaluation 4](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Evaluation4.png)
+![Evaluation 5](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Evaluation5.png)
+![Evaluation 6](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/Evaluation6.png)
+
+---
+
+### Sidebar Controls
+
+Mode switching between the Rule Based Engine and Decision Tree,
+the Retrain button, and the expandable Project Information and
+Developer Details sections.
+
+![Sidebar Switch and Controls](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/switch.png)
+![Sidebar About and Developer Info](https://github.com/mibrahim-O2/AI_Tutor_PLR_AbstractMinds/raw/main/Screenshots/about.png)
+
+---

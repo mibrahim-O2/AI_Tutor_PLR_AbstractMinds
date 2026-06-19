@@ -209,3 +209,54 @@ AI_Tutor_PLR_AbstractMinds/
 ├── requirements.txt
 └── README.md
 ```
+## 6. Dataset Information
+
+Rather than relying on real student records which raise privacy
+concerns and are difficult to collect at scale this project uses
+a synthetic dataset generated specifically to mirror realistic quiz
+behavior. Every record is created using the same rule thresholds
+that power the Rule-Based Engine, with a small amount of random
+noise (+/-5%) layered on top so the Decision Tree learns soft,
+natural boundaries instead of memorizing exact cutoffs.
+
+**File:** `data/student_scores.csv`
+**Total Records:** 200 synthetic student quiz entries
+**Generator Script:** `python data/generate_dataset.py`
+
+### Column Reference
+
+| Column | Type | Range | Description |
+|---|---|---|---|
+| `student_id` | int | 1 - 200 | Unique record identifier |
+| `topic` | string | 10 topics | Quiz subject area |
+| `score_pct` | float | 5.0 - 100.0 | Quiz score percentage |
+| `response_time` | float | 10.0 - 150.0 | Time taken, in seconds |
+| `confidence` | string | High / Medium / Low | Self reported confidence level |
+| `prev_score` | float | 0.0 - 100.0 | Score from the previous quiz attempt |
+| `recommendation` | string | 3 classes | Target label used for training |
+
+### Label Distribution (Approximate)
+
+| Label | Count | Share |
+|---|---|---|
+| Review Basics | ~70 | 35% |
+| Practice More | ~80 | 40% |
+| Next Topic | ~50 | 25% |
+
+This distribution is intentionally close to balanced, giving the
+Decision Tree enough examples of every class to learn from without
+favoring one recommendation over another.
+
+### Why Synthetic Data
+Using generated data instead of real student records served two
+clear purposes:
+1. **Privacy**: No student information was ever collected, stored,
+   or put at risk. There were no consent concerns to manage because
+   no real individual's data existed in the first place.
+2. **Control**: Generating the data made it possible to shape the
+   class distribution deliberately, keeping the dataset realistic
+   and balanced rather than skewed toward whichever outcome happens
+   to dominate in a typical classroom.
+
+---
+

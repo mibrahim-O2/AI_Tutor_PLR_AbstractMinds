@@ -576,3 +576,18 @@ application, not just described in documentation.
 
 ---
 
+## 15. Documentation
+
+This README was compiled and maintained by ***Muhammad Ibrahim***
+(2k23/CSE/94), Project Lead of AbstractMinds, on behalf of the team,
+bringing together the project overview, methodology, dataset
+documentation, installation guide, usage instructions, results, and
+lab guide compliance mapping into a single reference document.
+
+The work documented here reflects the combined contributions of
+the entire AbstractMinds team *Muhammad Ibrahim, Arsal Jan, and
+Ali* as outlined in the Team section above.
+
+[![LinkedIn](https://img.shields.io/badge/Muhammad%20Ibrahim-LinkedIn-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/muhammad-ibrahim-o2/?skipRedirect=true)
+
+---

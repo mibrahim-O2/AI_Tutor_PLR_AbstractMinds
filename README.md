@@ -295,12 +295,12 @@ system:
 - Git
 
 ### Setup Steps
-### Step 1 *Clone the repository*
+### Step 1 Clone the repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/AI_Tutor_PLR_AbstractMinds.git
 cd AI_Tutor_PLR_AbstractMinds
 ```
-### Step 2 *Create and activate a virtual environment*
+### Step 2 Create and activate a virtual environment
 ### *Windows*
 ```bash
 python -m venv venv
@@ -311,19 +311,19 @@ venv\Scripts\activate
 python -m venv venv
 source venv/bin/activate
 ```
-### Step 3 *Install all required dependencies*
+### Step 3 Install all required dependencies
 ```bash
 pip install -r requirements.txt
 ```
-### Step 4 *Generate the synthetic dataset (run once only)*
+### Step 4 Generate the synthetic dataset (run once only)
 ```bash
 python data/generate_dataset.py
 ```
-### Step 5 *Create the models folder*
+### Step 5 Create the models folder
 ```bash
 mkdir models
 ```
-### Step 6 *Launch the application*
+### Step 6 Launch the application
 ```bash
 streamlit run app.py
 ```
@@ -339,7 +339,7 @@ four tabs and a sidebar, each serving a distinct purpose in the
 overall workflow from entering a quiz result to fully evaluating
 how the AI arrived at its decision.
 
-### Tab 1  *Get Recommendation*
+### Tab 1  Get Recommendation
 
 This is where every session starts. Enter the details of a recent
 quiz, choose which AI method should analyze them, and receive a
@@ -354,7 +354,7 @@ personalized recommendation in return.
 7. Review the recommendation, next topic, practice count, and
    revision flag
 
-### Tab 2 *Charts*
+### Tab 2 Charts
 
 A visual breakdown of both the dataset and your own performance,
 rendered through four interactive Plotly charts.
@@ -364,7 +364,7 @@ rendered through four interactive Plotly charts.
 - **Line chart**: score trend across students
 - **Radar chart**: your performance compared to the dataset average
 
-### Tab 3 *Explainability*
+### Tab 3 Explainability
 
 This tab answers the question every recommendation system should be
 able to answer: *why*. It traces the exact reasoning behind the
@@ -375,7 +375,7 @@ result shown in *Tab 1*.
 - Read the full step-by-step reasoning log
 - Check the input-versus-threshold summary table
 
-### Tab 4 *Evaluation*
+### Tab 4 Evaluation
 
 A direct, side by side comparison of both AI approaches, backed by
 standard classification metrics rather than assumptions.
@@ -396,5 +396,30 @@ leaving the current view.
 - View **Project Information** title, subject, supervisor.
 - View **Developer Details** team member names, roll numbers,
   roles, and individual contributions
+
+---
+## 10. Results
+
+Both AI approaches were evaluated on the same 20% held-out test
+set (40 records), ensuring the comparison reflects a fair,
+identical benchmark rather than two separate evaluation conditions.
+
+| Metric | Rule-Based Engine | Decision Tree |
+|---|---|---|
+| Accuracy | ~0.80 | ~0.85 |
+| Precision | ~0.79 | ~0.85 |
+| Recall | ~0.80 | ~0.85 |
+| F1 Score | ~0.79 | ~0.84 |
+
+The Decision Tree consistently edges ahead across every metric.
+This is expected: rather than relying on fixed, hard-coded score
+thresholds, it learns soft, data-driven boundaries that adapt to
+the natural variation present in the dataset. The Rule-Based
+Engine, by contrast, trades a small amount of accuracy for complete
+transparency every decision it makes can be traced back to an
+explicit rule.
+
+Both results are presented side by side, with supporting charts,
+in the Evaluation tab.
 
 ---

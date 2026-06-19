@@ -332,3 +332,69 @@ browser at `http://localhost:8501`. If it does not open on its own,
 copy that address into your browser manually.
 
 ---
+## 9. How to Run and Use
+
+Once the application is running, the interface is organized into
+four tabs and a sidebar, each serving a distinct purpose in the
+overall workflow from entering a quiz result to fully evaluating
+how the AI arrived at its decision.
+
+### Tab 1  *Get Recommendation*
+
+This is where every session starts. Enter the details of a recent
+quiz, choose which AI method should analyze them, and receive a
+personalized recommendation in return.
+
+1. Select your quiz topic from the dropdown
+2. Set your quiz score using the slider (0 to 100)
+3. Choose your confidence level (High / Medium / Low)
+4. Set your response time and previous score
+5. Select an AI mode from the sidebar Rule Based or Decision Tree
+6. Click **Get My Recommendation**
+7. Review the recommendation, next topic, practice count, and
+   revision flag
+
+### Tab 2 *Charts*
+
+A visual breakdown of both the dataset and your own performance,
+rendered through four interactive Plotly charts.
+
+- **Bar chart**: average score per topic
+- **Pie chart**: distribution of recommendations across the dataset
+- **Line chart**: score trend across students
+- **Radar chart**: your performance compared to the dataset average
+
+### Tab 3 *Explainability*
+
+This tab answers the question every recommendation system should be
+able to answer: *why*. It traces the exact reasoning behind the
+result shown in *Tab 1*.
+
+- View which rule or Decision Tree path fired
+- See key factors alongside clear signal indicators
+- Read the full step-by-step reasoning log
+- Check the input-versus-threshold summary table
+
+### Tab 4 *Evaluation*
+
+A direct, side by side comparison of both AI approaches, backed by
+standard classification metrics rather than assumptions.
+
+- Compare the Rule-Based Engine against the Decision Tree
+- View Accuracy, Precision, Recall, and F1 Score for both
+- Inspect the confusion matrix heatmap
+- Read the full classification report
+
+### Sidebar Controls
+
+Persistent controls available from any tab, used to switch AI
+modes, retrain the model, and review project context without
+leaving the current view.
+
+- Switch between the Rule-Based Engine and the Decision Tree
+- Click **Retrain Decision Tree** to retrain the model on demand
+- View **Project Information** title, subject, supervisor.
+- View **Developer Details** team member names, roll numbers,
+  roles, and individual contributions
+
+---
